@@ -148,6 +148,7 @@ span.checkmark {
 
 .content {
     margin-left: 290px;
+    margin-bottom: -50px;
     padding: 40px;
     width: calc(100% - 290px);
 }
@@ -175,4 +176,9 @@ p {
     margin-right: 8px;
     display: inline-block;
     vertical-align: middle;
+}
+
+.footer, .push{
+    height: 50px;
+
 }
