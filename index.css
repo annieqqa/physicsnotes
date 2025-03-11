@@ -45,6 +45,26 @@ body {
     background-color: var(--hover-bg);
 }
 
+.sidebar-toggle{
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--active-bg);
+    color: var(--text-color);
+    cursor: pointer;
+    transition: left 0.3s ease;
+    font-size: 0.7em;
+    z-index: 1000;
+    height:25px;
+}
+
+.sidebar-toggle:hover {
+    background-color: var(--hover-bg);
+}
+
 .sidebar {
     width: 250px;
     height: 100vh;
@@ -69,6 +89,7 @@ body {
     align-items: center;
     margin-bottom: 15px;
 }
+
 
 .checkbox-container {
     display: inline-flex;
@@ -127,6 +148,17 @@ span.checkmark {
     display: inline-block;
 }
 
+.sidebar{
+    transition: transform 0.3s ease;
+    transform: translateX(0);
+}
+
+.sidebar[collapsed = 'yes'] {
+    /* display  */
+    transition: transform 0.3s ease;
+    transform: translateX(-100%);
+}
+
 .sidebar a {
     color: var(--text-color);
     text-decoration: none;
@@ -134,7 +166,6 @@ span.checkmark {
     display: inline-block;
     border-radius: 5px;
     transition: background-color 0.3s;
-    flex-grow: 1;
 }
 
 .sidebar a:hover {
@@ -150,6 +181,11 @@ span.checkmark {
     margin-left: 290px;
     padding: 40px;
     width: calc(100% - 290px);
+}
+
+.content[move-left="yes"] {
+    margin-left: 20px;
+    width : 100%;
 }
 
 .content-item {

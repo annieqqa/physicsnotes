@@ -17,6 +17,19 @@ document.addEventListener('DOMContentLoaded', function() {
         themeToggle.textContent = isDark ? '☀️' : '🌙';
         localStorage.setItem('theme', isDark ? 'light' : 'dark');
     });
+    
+    // Hide sidebar functionality
+    const sidebarToggle = document.querySelector('.sidebar-toggle');
+    const sidebar = document.querySelector('.sidebar');
+    const content = document.querySelector('.content');
+
+    sidebarToggle.addEventListener('click', () => {
+        const collapsed = sidebar.getAttribute('collapsed') === 'yes';
+        console.log(collapsed);
+        sidebar.setAttribute('collapsed', collapsed ? 'no' : 'yes');
+        content.setAttribute('move-left', collapsed ? 'no' : 'yes');
+        sidebarToggle.innerHTML = collapsed ?  '☰' : '→';
+    });
 
     // Checkbox persistence
     const checkboxes = document.querySelectorAll('.checkbox-container input');
@@ -35,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
             localStorage.setItem(`checkbox-${index}`, this.checked);
         });
     });
-
+    
     // Existing sidebar functionality
     const sidebarLinks = document.querySelectorAll('.sidebar a');
     const contentItems = document.querySelectorAll('.content-item');
@@ -50,6 +63,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    
     // Prevent checkbox clicks from triggering link activation
     document.querySelectorAll('.checkbox-container').forEach(container => {
         container.addEventListener('click', function(e) {
