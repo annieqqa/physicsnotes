@@ -1,5 +1,5 @@
-/* CSS structure written by NightCat tirednightcat@gmail.com */
-/* Managed by human */
+/* Visual Effects and CSS code managed by human helloworld07080910@gmail.com */
+/* CSS written by NightCat tirednightcat@gmail.com */
 
 :root {
     --bg-color: #2a2a2a;
@@ -148,7 +148,6 @@ span.checkmark {
 
 .content {
     margin-left: 290px;
-    margin-bottom: -50px;
     padding: 40px;
     width: calc(100% - 290px);
 }
