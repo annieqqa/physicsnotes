@@ -135,8 +135,8 @@ span.checkmark {
     content: "";
     position: absolute;
     display: none;
-    left: 5px;  /* Adjusted position */
-    top: 2px;   /* Adjusted position */
+    left: 5px;  
+    top: 2px;   
     width: 4px;
     height: 8px;
     border: solid white;
@@ -154,7 +154,6 @@ span.checkmark {
 }
 
 .sidebar[collapsed = 'yes'] {
-    /* display  */
     transition: transform 0.3s ease;
     transform: translateX(-100%);
 }

@@ -71,6 +71,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
+    // Unit folding
     document.querySelectorAll('.Unit').forEach(unit => {
         const unitText = unit.getAttribute('text') || 'Unit';
         const header = document.createElement('div');
