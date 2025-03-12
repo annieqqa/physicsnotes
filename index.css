@@ -194,8 +194,13 @@ span.checkmark {
     display: none;
 }
 
+
 .content-item.active {
     display: block;
+}
+
+.content-item > ul {
+    margin-bottom: 40px;
 }
 
 h1 {
