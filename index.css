@@ -213,3 +213,46 @@ p {
     display: inline-block;
     vertical-align: middle;
 }
+
+.unit-header {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #5a5a5a7e;
+    border-radius: 5px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s ease;
+}
+
+.unit-header:hover {
+    background-color: #7676767e;
+}
+
+.unit-header::before {
+    content: '▼';
+    display: inline-block;
+    transition: transform 0.3s ease;
+    transform-origin: center;
+    margin-right: 8px;
+    width: 15px;
+}
+
+.unit-header.collapsed::before {
+    transform: rotate(-90deg);
+}
+
+.unit-content {
+    margin-left: 20px;
+    padding-left: 10px;
+    overflow: hidden;
+    transition: 
+        max-height 0.3s ease-in-out,
+        opacity 0.2s ease-in-out;
+    max-height: 1000px;
+    opacity: 1;
+}
+
+.collapsed + .unit-content {
+    max-height: 0;
+    opacity: 0;
+}

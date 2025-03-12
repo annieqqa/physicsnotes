@@ -70,4 +70,25 @@ document.addEventListener('DOMContentLoaded', function() {
             e.stopPropagation();
         });
     });
+
+    document.querySelectorAll('.Unit').forEach(unit => {
+        const unitText = unit.getAttribute('text') || 'Unit';
+        const header = document.createElement('div');
+        header.className = 'unit-header';
+        header.textContent = unitText;
+
+        const contentWrapper = document.createElement('div');
+        contentWrapper.className = 'unit-content';
+        
+        while (unit.firstChild) {
+            contentWrapper.appendChild(unit.firstChild);
+        }
+        
+        unit.appendChild(header);
+        unit.appendChild(contentWrapper);
+        
+        header.addEventListener('click', () => {
+            header.classList.toggle('collapsed');
+        });
+    });
 });
