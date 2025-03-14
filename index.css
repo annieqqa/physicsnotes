@@ -153,6 +153,11 @@ span.checkmark {
 .sidebar{
     transition: transform 0.3s ease;
     transform: translateX(0);
+    height: 100vh; /* Viewport height */
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    bottom: 0;
 }
 
 .sidebar[collapsed = 'yes'] {
