@@ -9,6 +9,20 @@
     --active-bg: #4a4a4a;
 }
 
+.content {
+    margin-left: 300px; /* Match sidebar width exactly */
+    padding: 40px;
+    width: calc(100% - 300px);
+    transition: 
+        margin-left 0.3s ease, 
+        width 0.3s ease; /* Add width transition */
+}
+
+.content[move-left="yes"] {
+    margin-left: 0;
+    width: calc(100% - 0px); /* More precise calculation */
+}
+
 body[data-theme="light"] {
     --bg-color: #ffffe0;
     --text-color: #000000;
@@ -45,7 +59,7 @@ body {
     background-color: var(--hover-bg);
 }
 
-.sidebar-toggle{
+.sidebar-toggle {
     position: fixed;
     top: 20px;
     left: 20px;
@@ -58,7 +72,7 @@ body {
     transition: left 0.3s ease;
     font-size: 0.7em;
     z-index: 1000;
-    height:25px;
+    height: 25px;
 }
 
 .sidebar-toggle:hover {
@@ -66,13 +80,18 @@ body {
 }
 
 .sidebar {
-    width: 250px;
     height: 100vh;
     background-color: var(--sidebar-bg);
     padding: 20px;
     overflow-x: hidden;
     overflow-y: auto;
     position: fixed;
+    width: 300px;
+    transition: transform 0.3s ease;
+}
+
+.sidebar[collapsed='yes'] {
+    transform: translateX(-100%);
 }
 
 .sidebar ul {
@@ -150,14 +169,16 @@ span.checkmark {
     display: inline-block;
 }
 
-.sidebar{
+.sidebar {
     transition: transform 0.3s ease;
     transform: translateX(0);
-    height: 100vh; /* Viewport height */
+    height: 100vh;
+    overflow: hidden;
     box-sizing: border-box;
     position: fixed;
     top: 0;
     bottom: 0;
+    width: 300px;
 }
 
 .sidebar[collapsed = 'yes'] {
