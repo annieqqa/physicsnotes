@@ -32,17 +32,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chapter name</title>
-    <link rel="stylesheet" href="../index.css">
+    <link rel="stylesheet" href="../../another/css/custom-default.css"></a>
+    <script src="../../another/js/custom-default.js"></script>
+    
 </head>
 <body>
-    <!-- Place the Sidebar here -->
-
-    <h1>Chapter</h1>
-    <!-- Content here -->
-    <h2>Topic</h2>
-    <ul>
-        Something here. 
-    </ul>
-    <script src="../main.js"></script>
-</body>
-</html>
+{% include sidebar.html %}
+{{ content }}
+<!-- {% include footer.html %} -->
