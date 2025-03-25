@@ -246,6 +246,10 @@ p {
     vertical-align: middle;
 }
 
+li{
+    margin-bottom: 20px
+}
+
 .unit-header {
     cursor: pointer;
     padding: 10px;
