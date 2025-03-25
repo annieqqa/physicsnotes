@@ -75,7 +75,7 @@ body {
     cursor: pointer;
     transition: left 0.3s ease;
     font-size: 0.7em;
-    z-index: 1000;
+    z-index: 1001;
     height: 25px;
 }
 
@@ -92,6 +92,9 @@ body {
     position: fixed;
     width: 300px;
     transition: transform 0.3s ease;
+    box-sizing: border-box;
+    top: 0;
+    left: 0;
 }
 
 .sidebar[collapsed='yes'] {
@@ -126,6 +129,17 @@ body {
     cursor: pointer;
     margin-left: 4px;
     margin-top: 4px;
+}
+
+.sidebar > .sidebar-inner {
+    padding-bottom: 20px; 
+}
+
+.sidebar-inner {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .checkbox-container input {
@@ -174,18 +188,6 @@ span.checkmark {
 
 .checkbox-container input:checked ~ .checkmark:after {
     display: inline-block;
-}
-
-.sidebar {
-    transition: transform 0.3s ease;
-    transform: translateX(0);
-    height: 100vh;
-    overflow: hidden;
-    box-sizing: border-box;
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    width: 300px;
 }
 
 .sidebar[collapsed = 'yes'] {
@@ -269,6 +271,8 @@ li{
     margin-bottom: 5px;
     font-weight: bold;
     transition: background-color 0.2s ease;
+    overflow: hidden;
+    margin-bottom: 0;
 }
 
 .unit-header:hover {
@@ -282,6 +286,7 @@ li{
     transform-origin: center;
     margin-right: 8px;
     width: 15px;
+    max-height: 1000px;
 }
 
 .unit-header.collapsed::before {
@@ -295,8 +300,9 @@ li{
     transition: 
         max-height 0.3s ease-in-out,
         opacity 0.2s ease-in-out;
-    max-height: 1000px;
+    max-height: 100vh;
     opacity: 1;
+    border-left: 2px solid var(--hover-bg);
 }
 
 .collapsed + .unit-content {
